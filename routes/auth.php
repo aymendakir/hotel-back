@@ -26,7 +26,7 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
     ->name('register');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-    ->middleware('guest:adminate')
+    ->middleware('guest:web')
     ->name('login');
 Route::post('/login/admin', [AuthenticatedSessionController::class, 'store_admin'])
     ->middleware('guest:adminate')
