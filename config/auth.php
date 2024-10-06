@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Admin;
+
 return [
 
     /*
@@ -40,6 +42,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'adminate' => [
+            'driver' => 'session',
+            'provider' => 'adminates',
+        ],
     ],
 
     /*
@@ -62,7 +68,11 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\client::class,
+        ],
+        'adminates' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\employe::class,
         ],
 
         // 'users' => [
@@ -93,6 +103,13 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+
+        ],
+        'adminates' => [
+            'provider' => 'adminates',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
