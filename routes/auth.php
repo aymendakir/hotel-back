@@ -26,7 +26,7 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
     ->name('register');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-    ->middleware('guest:web')
+    ->middleware('guest:adminate')
     ->name('login');
 Route::post('/login/admin', [AuthenticatedSessionController::class, 'store_admin'])
     ->middleware('guest:adminate')
@@ -52,6 +52,14 @@ Route::middleware(['auth:sanctum,adminate,web'])->group(function () {
         ->middleware('auth')
         ->name('logout');
 });
+Route::middleware(['auth:sanctum,adminate,web'])->get('/user', function (Request $request) {
+    return $request->user();
+});
+Route::middleware(['auth:adminate'])->get('/user2', function (Request $request) {
+    return $request->user();
+});
+
+
 
 /*Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->middleware('auth')
