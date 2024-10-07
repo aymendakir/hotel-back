@@ -52,7 +52,7 @@ Route::middleware(['auth:sanctum,adminate,web'])->group(function () {
         ->middleware('auth')
         ->name('logout');
 });
-Route::middleware(['auth:sanctum,adminate,web'])->get('/user', function (Request $request) {
+Route::middleware(['auth:sanctum,web'])->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::middleware(['auth:adminate'])->get('/user2', function (Request $request) {
