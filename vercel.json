@@ -19,5 +19,17 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
-    ]
+    ],
+    "env": {
+        "APP_NAME": "laravel",
+        "APP_ENV": "local",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://hotel-back-gdee.vercel.app",
+
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
+    }
 }
