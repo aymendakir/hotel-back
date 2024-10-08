@@ -22,8 +22,8 @@
     ],
     "env": {
         "APP_NAME": "laravel",
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_ENV": "local",
+        "APP_DEBUG": "true",
         "APP_URL": "https://hotel-back-gdee.vercel.app",
         "VERCEL_DEMO_MODE": "true",
         "APP_CONFIG_CACHE": "/tmp/config.php",
